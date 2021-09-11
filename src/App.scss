@@ -1,0 +1,15 @@
+.App{
+  display:flex;
+  align-items:center;
+  flex-direction:column;
+}
+.chatWindow{
+  width: 300px;
+  height: 200px;
+  overflow: auto;
+  border: 1px solid #000;
+  div{
+  margin-left: 10px;
+  margin-top:10px;
+  }
+}
