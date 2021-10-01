@@ -1,0 +1,20 @@
+.somebodyStyles{
+    width: 760px;
+    margin-bottom: 10px;
+    word-wrap: break-word
+}
+.author{
+    font-size: 18px;
+    font-weight: bold;
+}
+.chatWindows{
+    width: 1239px;
+    height: 500px;
+    overflow: auto;
+    border: 1px solid #c4c4c4;
+    border-bottom: none;
+    div{
+      margin-left: 10px;
+      margin-top:10px;
+    }
+  }
