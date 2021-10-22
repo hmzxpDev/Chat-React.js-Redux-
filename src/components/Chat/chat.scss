@@ -2,7 +2,7 @@
     display:flex;
   }
   .chatContact{
-    width: 150px;
+    min-width: 200px;
     height: 556px;
     border-bottom: 1px solid #c4c4c4;
     border-left: 1px solid #c4c4c4;
@@ -16,4 +16,7 @@
     width: 90%;
     margin: auto;
     margin-top: 10px;
+  }
+  .chatMainWindow{
+    width: 700px;
   }
