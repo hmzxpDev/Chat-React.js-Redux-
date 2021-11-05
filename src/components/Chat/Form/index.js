@@ -6,7 +6,6 @@ import { useDispatch } from "react-redux";
 import { addNewMessage } from '../../../store/Chat/Messages/actions'
 import { useParams } from "react-router";
 import { useSelector } from "react-redux";
-import { actualContactSelector } from "../../../store/Chat/Contacts/selectror"
 import { messagesActualUser } from "../../../store/Chat/Messages/selector";
 
 export const Form = () => {
@@ -20,7 +19,6 @@ export const Form = () => {
     const chatNum = useParams().ChatId;
 
     // redux
-    const actualContact = useSelector(actualContactSelector(chatNum));
     const actualMessages = useSelector(messagesActualUser(chatNum));
     // для отправки в стор
     const dispatch = useDispatch();
@@ -41,29 +39,11 @@ export const Form = () => {
         dispatch(addNewMessage(userMessage, chatNum)); //chatNum для поиска в сторе нужного ключа массива сообщений
     }, [chatNum, dispatch, messageObj, value])
 
-    // функция ответа робота
-    const botAnswer = useCallback(() => {
-        setTimeout(() => {
-            // Если автор последнего сообщения человек  - то бот пишет
-            if (actualMessages[actualMessages.length - 1].author === 'Human') {
-                // создаем сообщение
-                const botMessage = messageObj('Вас приветствует высший разум', actualContact)
-                // отправляем в стор
-                dispatch(addNewMessage(botMessage, chatNum))
-            }
-        }, 3000)
-    }, [actualMessages, actualContact, chatNum, dispatch, messageObj])
-    // здесь не будет очищения таймаута, потому что он должен добавить ответ робота в массив даже если компонент размонтирован 
-
-
-
     // функция отправляет и очищает форму без релоуда
     const handleSubmit = (event) => {
         event.preventDefault();
         // отправляем сообщение
         sendUserMessage();
-        // запускаем ответ бота
-        botAnswer();
         // очищаем форму
         setValue('');
         // возвращаем фокус на инпут
