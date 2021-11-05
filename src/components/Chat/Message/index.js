@@ -1,18 +1,21 @@
 import './message.scss';
 import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { useParams } from 'react-router';
 
-export default function Message({ messageList }) {
-    // функция рендера
-    const messagesRender = () => {
-        return messageList.map(message =>
-            <div key={message.index}>
-                <span className="author">{message.author}</span>: {message.text}
-            </div>
+export default function Message() {
+    // загружаем сообщения из стора
+    const messages = useSelector((state) => state.Messages); // нужно для постоянного рендера
+    // для правильного рендера считываем номер чата
+    const chatId = useParams().ChatId
 
-        )
-
+    // отрисовываем нужный чат
+    const renderMessages = (item) => {
+        return item[`${chatId}`].map((item) =>
+            <div key={item.index}>
+                <span className="author">{item.author}</span>: {item.text}
+            </div>)
     }
-
 
     // функция опускает скроллер вниз
     const handleScroll = () => {
@@ -20,13 +23,14 @@ export default function Message({ messageList }) {
         element.scrollTop = element.scrollHeight;
     }
 
+    // листаем вниз на каждом монтировании
     useEffect(() => {
         handleScroll()
     })
 
     return (
         <div className="chatWindows">
-            {messagesRender()}
+            {renderMessages(messages)}
         </div>
     )
 }

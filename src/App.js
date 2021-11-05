@@ -6,7 +6,6 @@ import { store } from "./store"
 
 function App() {
 
-  // template
   return (
     <Provider store={store}>
       <Routes></Routes>
