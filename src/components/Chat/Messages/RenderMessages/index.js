@@ -1,15 +1,19 @@
+// scss
 import './message.scss';
+// react
 import { useEffect } from 'react';
+// redux
 import { useSelector } from 'react-redux';
+// router
 import { useParams } from 'react-router';
 
 export default function Message() {
-    // загружаем сообщения из стора
-    const messages = useSelector((state) => state.Messages); // нужно для постоянного рендера
-    // для правильного рендера считываем номер чата
+    // redux
+    const messages = useSelector((state) => state.Messages); // не селектор - для рендера!
+    // router
     const chatId = useParams().ChatId
 
-    // отрисовываем нужный чат
+    // рендер актуального чата
     const renderMessages = (item) => {
         return item[`${chatId}`].map((item) =>
             <div key={item.index}>

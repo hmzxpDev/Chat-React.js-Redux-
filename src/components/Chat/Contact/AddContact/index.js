@@ -21,7 +21,7 @@ import { changeShowStatusAction } from '../../../../store/Chat/Contacts/action';
 import { contactSelector, contactLengthSelector } from '../../../../store/Chat/Contacts/selectror';
 
 
-export const AddNewChat = () => {
+export default function AddNewChat() {
     const [open, setValue] = React.useState(false);
 
     // redux
@@ -71,7 +71,7 @@ export const AddNewChat = () => {
     }
 
     return (
-        <div>
+        <div className="addChat" >
             {/* кнопка открывает модальное окно */}
             <IconButton onClick={handleClickOpen}>
                 <AddCommentIcon className="addChatButton" />
