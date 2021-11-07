@@ -9,7 +9,7 @@ export const addNewMessage = (message, chatNum) => (dispatch, getState) => {
     setTimeout(() => {
         if (allMessages[allMessages.length - 1].author === 'Human') {
             return dispatch({
-                type: ADD_MESSAGE_ACTION,
+                type: ADD_MESSAGE_ACTION,                       // засунул action в middleware, что бы было нагляднее
                 payload: {
                     index: allMessages.length,
                     author: Contact,

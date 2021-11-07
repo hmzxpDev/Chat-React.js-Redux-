@@ -3,9 +3,9 @@ import { reducerContacts } from './Chat/Contacts/reducer';
 import { reducerMessages } from './Chat/Messages/reducer';
 import { reducerProfile } from './Profile/reducer'
 import thunk from 'redux-thunk'
+
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'; // localStorage
-
 
 const persistConfig = {
     key: 'root',

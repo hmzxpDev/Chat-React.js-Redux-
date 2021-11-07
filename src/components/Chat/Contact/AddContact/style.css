@@ -3,3 +3,15 @@
     height: 100px;
     width: 250px;
 }
+
+.addChat{
+
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.addChatButton{
+    font-size: 2.5rem !important;
+    color: teal;
+}

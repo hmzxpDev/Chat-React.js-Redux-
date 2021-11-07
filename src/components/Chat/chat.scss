@@ -1,22 +1,23 @@
 .App{
-    display:flex;
-  }
-  .chatContact{
-    min-width: 200px;
-    height: 556px;
-    border-bottom: 1px solid #c4c4c4;
-    border-left: 1px solid #c4c4c4;
-    border-top: 1px solid #c4c4c4;
-  }
-  
-  form{
-    width: 1241px; 
-  }
-  .Container{
-    width: 90%;
-    margin: auto;
-    margin-top: 10px;
-  }
-  .chatMainWindow{
-    width: 700px;
-  }
+  display:flex;
+}
+
+.Container{
+  width: 90%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  margin-top: 140px;
+}
+
+.contacts{
+  min-width: 200px;
+  height: 556px;
+  border-bottom: 1px solid #c4c4c4;
+  border-left: 1px solid #c4c4c4;
+  border-top: 1px solid #c4c4c4;
+}
+
+.message{
+  width: 700px;
+}

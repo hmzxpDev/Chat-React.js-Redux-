@@ -1,27 +1,25 @@
-
+// material ui
 import { Checkbox } from "@material-ui/core";
 import { Bookmark, BookmarkBorder, Favorite, FavoriteBorder } from "@material-ui/icons";
-
-
+// router
 import { Link } from "react-router-dom"
+// redux
 import { changeLike, changeFollow } from "../../store/Profile/actions.js"
 import { useSelector, useDispatch } from 'react-redux';
-// import { addNewMessage } from "../../store/Chat/Messages/actions.js";
-// стилизация спана
-const span = {
-    color: 'red',
-    fontSize: 10,
-    marginLeft: 10,
-}
+// стилизация span
+import { span } from './style.js'
 
 export const Profile = () => {
+    // redux
     const { like, follow } = useSelector((state) => state.Profile);
     const dispatch = useDispatch();
 
+    // функция ставит лайк
     const setLike = () => {
         dispatch(changeLike)
     };
 
+    // функция фоловит
     const setFollow = () => {
         dispatch(changeFollow)
     };

@@ -1,8 +1,8 @@
 // scss
 import './chat.scss';
 // мои компоненты
-import { Form } from './Form';
-import Message from './Message';
+import SendMessages from './Messages/SendMessages';
+import RenderMessages from './Messages/RenderMessages';
 import { Contact } from './Contact';
 
 export const Chat = () => {
@@ -10,12 +10,12 @@ export const Chat = () => {
     // template
     return (
         <div className="App Container">
-            <div className="chatContact">
+            <div className="contacts">
                 <Contact />
             </div>
-            <div className="chatMainWindow">
-                <Message />
-                <Form />
+            <div className="messages">
+                <RenderMessages />
+                <SendMessages />
             </div>
         </div>
     );

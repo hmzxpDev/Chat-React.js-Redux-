@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { NotFound } from "../404 Not Found";
-import { Chat } from '../Chat'
-import { MainView } from "../mainView";
-import { Profile } from "../Profile";
+import { NotFound } from "../view/404";
+import { Chat } from '../components/Chat'
+import { MainView } from "../view/Main";
+import { Profile } from "../components/Profile";
 
 export const Routes = () => {
     return (
